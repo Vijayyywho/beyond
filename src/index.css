@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Beyond Sands Design System - Coastal Blue Hour Theme */
+
+@layer base {
+  :root {
+    /* Base Colors - Light Mode */
+    --background: 0 0% 100%;
+    --foreground: 210 100% 3%;
+
+    /* Blue Hour Palette */
+    --primary: 210 100% 74%; /* Sky Blue #79BFFE */
+    --primary-foreground: 210 100% 3%;
+    --primary-glow: 210 100% 80%; /* Mist Blue #85C3FC */
+    
+    --secondary: 210 42% 41%; /* Harbor Blue #527DAD */
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 210 79% 71%; /* Breeze Blue #80B1EB */
+    --accent-foreground: 210 100% 3%;
+    
+    --muted: 210 40% 96%;
+    --muted-foreground: 210 25% 45%;
+    
+    /* Coastal Accents */
+    --terracotta: 18 55% 50%; /* #C2643B */
+    --palm-green: 150 35% 25%; /* #2B4F3B */
+    
+    /* Text Colors */
+    --text-primary: 210 100% 3%; /* Deep Midnight #01010A */
+    --text-body: 210 29% 18%; /* Charcoal Blue #222A30 */
+    --text-header: 210 100% 9%; /* Dusk Navy #09141F */
+    --text-overlay: 210 100% 7%; /* Inky Navy #011124 */
+    
+    /* UI Elements */
+    --card: 0 0% 100%;
+    --card-foreground: 210 29% 18%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 210 100% 74%;
+    
+    /* Glass Effects */
+    --glass-bg: 210 100% 98%;
+    --glass-border: 210 40% 90%;
+    
+    /* Shadows */
+    --shadow-soft: 210 25% 25%;
+    --shadow-glow: 210 100% 74%;
+    
+    --radius: 1rem;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 74%) 0%, hsl(210 79% 71%) 50%, hsl(210 42% 41%) 100%);
+    --gradient-glass: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    --gradient-overlay: linear-gradient(180deg, rgba(1,1,10,0) 0%, rgba(1,1,10,0.4) 70%, rgba(1,1,10,0.8) 100%);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .dark {
+    --background: 210 100% 3%;
+    --foreground: 0 0% 98%;
+    --card: 210 100% 7%;
+    --card-foreground: 0 0% 98%;
+    --primary: 210 100% 74%;
+    --primary-foreground: 210 100% 3%;
+    --secondary: 210 42% 41%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 100% 7%;
+    --muted-foreground: 210 40% 70%;
+    --glass-bg: 210 100% 5%;
+    --border: 210 40% 15%;
+    --input: 210 40% 15%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  /* Glass Morphism */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .glass-card {
+    @apply bg-white/[0.08] backdrop-blur-lg border border-white/[0.15] rounded-2xl;
+  }
+
+  /* Modern Effects */
+  .backdrop-blur-glass {
+    backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  .modern-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl;
+  }
+  
+  /* Coastal Effects */
+  .glow-primary {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.3);
+  }
+  
+  .shadow-soft {
+    box-shadow: 0 10px 40px -15px hsl(var(--shadow-soft) / 0.2);
+  }
+  
+  .shadow-elegant {
+    box-shadow: 0 25px 50px -12px hsl(var(--shadow-soft) / 0.25);
+  }
+  
+  /* Text Gradients */
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent;
+  }
+  
+  /* Hover Effects */
+  .hover-lift {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-elegant;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--primary)/0.4)];
+  }
+}
+
+@layer utilities {
+  /* Scroll Behavior */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+  
+  /* Staggered Animations */
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-parallax-slow {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  /* Stagger delay utilities */
+  .animate-stagger-1 { animation-delay: 0.1s; }
+  .animate-stagger-2 { animation-delay: 0.2s; }
+  .animate-stagger-3 { animation-delay: 0.3s; }
+  .animate-stagger-4 { animation-delay: 0.4s; }
+  .animate-stagger-5 { animation-delay: 0.5s; }
+}
