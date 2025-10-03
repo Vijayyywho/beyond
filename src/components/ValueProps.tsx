@@ -5,8 +5,8 @@ const ValueProps = () => {
   const values = [
     {
       icon: TreePine,
-      title: 'By the Palms',
-      description: 'Surrounded by swaying coconut palms and tropical gardens, find your perfect retreat in nature\'s embrace.',
+      title: 'By the Trees',
+      description: 'Surrounded by swaying coconut trees and tropical gardens, find your perfect retreat in nature\'s embrace.',
     },
     {
       icon: Waves,

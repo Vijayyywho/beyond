@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X, MessageCircle, Phone } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import logo from '@/assets/lofo.png';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +31,7 @@ const Navigation = () => {
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Hi! I'm interested in learning more about Beyond Sands resort. Could you help me with availability and rates?");
-    window.open(`https://wa.me/1234567890?text=${message}`, '_blank');
+    window.open(`https://wa.me/919923895055?text=${message}`, '_blank');
   };
 
   return (
@@ -45,12 +46,11 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
+          
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-sm"></div>
-            </div>
+            
             <span className="font-playfair text-xl font-semibold text-white">
-              Beyond Sands
+            <img src={logo} alt="logo" className="w-[100px] " />
             </span>
           </Link>
 

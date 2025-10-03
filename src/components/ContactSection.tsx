@@ -6,20 +6,20 @@ import { MapPin, Phone, MessageCircle, Mail, Clock, Car } from 'lucide-react';
 const ContactSection = () => {
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Hi! I'd like to know more about Beyond Sands resort. Could you help me with information about booking and availability?");
-    window.open(`https://wa.me/1234567890?text=${message}`, '_blank');
+    window.open(`https://wa.me/919923895055?text=${message}`, '_blank');
   };
 
   const contactInfo = [
     {
       icon: MapPin,
       title: 'Location',
-      details: ['Coastal Highway, Mandrem', 'North Goa, India 403527'],
+      details: ['Opposite Shitaladevi Temple Kelve Road,', 'Kelve,Palghar 401404'],
       action: 'Get Directions',
     },
     {
       icon: Phone,
       title: 'Call Us',
-      details: ['+91 98765 43210', '+91 98765 43211'],
+      details: ['+91 99238 95055'],
       action: 'Call Now',
     },
     {
@@ -32,9 +32,9 @@ const ContactSection = () => {
   ];
 
   const quickInfo = [
-    { icon: Clock, label: 'Check-in', value: '2:00 PM' },
-    { icon: Clock, label: 'Check-out', value: '11:00 AM' },
-    { icon: Car, label: 'From Airport', value: '45 minutes' },
+    { icon: Clock, label: 'Check-in', value: '12:00 PM' },
+    { icon: Clock, label: 'Check-out', value: '10:00 AM' },
+    { icon: Car, label: 'From Kelve Rd Railway Station', value: '15 minutes' },
     { icon: MapPin, label: 'Beach Distance', value: '5 minutes walk' },
   ];
 
@@ -43,8 +43,7 @@ const ContactSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-text-header mb-6">
-            Find us by the palms
-          </h2>
+          We’re Right by the Beach          </h2>
           <p className="text-xl text-text-body max-w-3xl mx-auto leading-relaxed">
             Easily accessible yet perfectly secluded, discover your coastal sanctuary in North Goa.
           </p>

@@ -60,10 +60,10 @@ Message: ${formData.message || 'Please help me with booking information'}`);
     {
       icon: Phone,
       title: 'Call Us',
-      details: ['+91 98765 43210', '+91 98765 43211'],
+      details: ['+91 9923895055', '+91 9923895055'],
       description: 'Speak with our reservation team',
       action: 'Call Now',
-      href: 'tel:+919876543210'
+      href: 'tel:+919923895055'
     },
     {
       icon: MessageCircle,
@@ -363,8 +363,8 @@ Message: ${formData.message || 'Please help me with booking information'}`);
                     <MapPin className="w-5 h-5 text-secondary mr-3 mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="font-medium">Beyond Sands Resort</p>
-                      <p>Coastal Highway, Mandrem</p>
-                      <p>North Goa, India 403527</p>
+                      <p>Opposite Shitaladevi Temple Kelve Road,</p>
+                      <p>Kelve,Palghar 401404</p>
                     </div>
                   </div>
                 </div>

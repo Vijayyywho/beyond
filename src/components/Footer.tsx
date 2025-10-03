@@ -9,14 +9,15 @@ import {
   Phone, 
   Mail, 
   MapPin 
-} from 'lucide-react';
+} from 'lucide-react';''
+import logo from '@/assets/lofo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Hi! I'm interested in Beyond Sands resort. Could you help me with more information?");
-    window.open(`https://wa.me/1234567890?text=${message}`, '_blank');
+    window.open(`https://wa.me/919923895055?text=${message}`, '_blank');
   };
 
   const quickLinks = [
@@ -49,11 +50,9 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-                <div className="w-5 h-5 bg-white rounded-sm"></div>
-              </div>
+             
               <span className="font-playfair text-2xl font-semibold">
-                Beyond Sands
+              <img src={logo} alt="logo" className="w-[150px]" />
               </span>
             </div>
             <p className="text-white/80 mb-6 leading-relaxed">
@@ -73,11 +72,11 @@ const Footer = () => {
               </Button>
               <div className="flex items-center text-white/80 text-sm">
                 <Phone className="w-4 h-4 mr-2" />
-                +91 98765 43210
+                +91 99238 95055
               </div>
               <div className="flex items-center text-white/80 text-sm">
                 <Mail className="w-4 h-4 mr-2" />
-                hello@beyondsands.in
+                beyondsandsresort@gmail.com
               </div>
             </div>
           </div>
@@ -123,8 +122,8 @@ const Footer = () => {
               <div className="flex items-start text-white/80 text-sm">
                 <MapPin className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p>Coastal Highway, Mandrem</p>
-                  <p>North Goa, India 403527</p>
+                  <p>Opposite Shitladevi temple Kelve Road</p>
+                  <p>Kelve,Palghar 401404</p>
                 </div>
               </div>
             </div>

@@ -1,10 +1,34 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { MessageCircle, ArrowDown } from 'lucide-react';
 import heroImage from '@/assets/hero-blue-hour.jpg';
+import bgImage from '@/assets/bg3.jpg';
+import bgImage1 from '@/assets/bg1.jpg';
+import bgImage2 from '@/assets/bg2.jpg';
+import poolEvening from '@/assets/pool-evening.jpg';
+import roomInterior from '@/assets/room-interior.jpg';
 
 const Hero = () => {
   const parallaxRef = useRef<HTMLDivElement>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  // Array of background images for the slider
+  const backgroundImages = [
+    bgImage,
+    bgImage1,
+    bgImage2,
+    poolEvening,
+    roomInterior
+  ];
+
+  // Auto-slide functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % backgroundImages.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [backgroundImages.length]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,7 +45,7 @@ const Hero = () => {
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Hi! I'd like to inquire about booking a stay at Beyond Sands. Could you help me with availability and rates?");
-    window.open(`https://wa.me/1234567890?text=${message}`, '_blank');
+    window.open(`https://wa.me/?text=${message}`, '_blank');
   };
 
   const scrollToRooms = () => {
@@ -30,13 +54,13 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative h-screen overflow-hidden">
-      {/* Background Image with Parallax */}
+    <section className="relative h-screen overflow-hidden pt-10">
+      {/* Background Slider with Parallax */}
       <div
         ref={parallaxRef}
-        className="absolute inset-0 w-full h-[120%] bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 w-full h-[120%] bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-in-out"
         style={{
-          backgroundImage: `url(${heroImage})`,
+          backgroundImage: `url(${backgroundImages[currentSlide]})`,
         }}
       />
 
@@ -54,16 +78,14 @@ const Hero = () => {
 
           {/* Main Heading */}
           <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-            Coastal calm at the{' '}
+          Discover Paradise at{' '}
             <span className="text-gradient-primary bg-gradient-to-r from-primary via-accent to-primary-glow bg-clip-text text-transparent">
-              blue hour
-            </span>
+            Beyond Sands             </span>
           </h1>
 
           {/* Subheading */}
           <p className="text-lg md:text-xl text-white/90 font-light max-w-xl mx-auto leading-relaxed">
-            Wake to palms, wind, and the sea's quiet hush. Discover your sanctuary where luxury meets coastal serenity.
-          </p>
+          At Beyond Sands, every stay is a blend of comfort, nature, and elegance.          </p>
 
           {/* USP Chips */}
           <div className="flex flex-wrap justify-center gap-2 text-sm animate-fade-up" style={{ animationDelay: '0.6s' }}>
@@ -105,6 +127,23 @@ const Hero = () => {
               <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
             </button>
           </div>
+        </div>
+      </div>
+
+      {/* Slide Indicators */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="flex space-x-2">
+          {backgroundImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                index === currentSlide
+                  ? 'bg-white scale-125'
+                  : 'bg-white/50 hover:bg-white/75'
+              }`}
+            />
+          ))}
         </div>
       </div>
 

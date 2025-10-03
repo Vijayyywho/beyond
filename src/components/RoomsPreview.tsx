@@ -6,38 +6,33 @@ import { Link } from 'react-router-dom';
 import roomInterior from '@/assets/room-interior.jpg';
 import poolEvening from '@/assets/pool-evening.jpg';
 
+import bgImage from '@/assets/gardenn.png';
+import bgImage1 from '@/assets/pool.png';
+
+
 const RoomsPreview = () => {
   const rooms = [
     {
       id: 1,
-      name: 'Ocean Breeze Villa',
+      name: 'Garden View Room',
       description: 'Spacious villa with private terrace overlooking palm groves and distant ocean views.',
-      image: roomInterior,
-      price: '₹8,500',
+      image: bgImage,
+
       guests: 4,
-      amenities: ['Free WiFi', 'Breakfast', 'Private Parking', 'AC'],
+      amenities: ['Free WiFi',  'Private Parking', 'AC'],
       features: ['Private Verandah', 'Garden View', 'Work Desk'],
     },
     {
       id: 2,
-      name: 'Palm Grove Suite',
+      name: 'Pool View Room',
       description: 'Intimate suite perfect for couples, nestled among coconut palms with serene garden views.',
-      image: poolEvening,
-      price: '₹6,200',
+      image: bgImage1,
+    
       guests: 2,
-      amenities: ['Free WiFi', 'Breakfast', 'Pool Access', 'AC'],
+      amenities: ['Free WiFi', 'Pool Access', 'AC'],
       features: ['Romantic Setting', 'Pool View', 'Mini Bar'],
     },
-    {
-      id: 3,
-      name: 'Coastal Family Villa',
-      description: 'Perfect for families, with connecting rooms and easy access to pool and garden areas.',
-      image: roomInterior,
-      price: '₹12,000',
-      guests: 6,
-      amenities: ['Free WiFi', 'Breakfast', 'Private Parking', 'AC'],
-      features: ['Family Friendly', 'Connecting Rooms', 'Garden Access'],
-    },
+ 
   ];
 
   return (
@@ -52,7 +47,7 @@ const RoomsPreview = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {rooms.map((room, index) => (
             <Card
               key={room.id}
@@ -67,7 +62,7 @@ const RoomsPreview = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-2xl font-bold">{room.price}</p>
+                  
                   <p className="text-sm opacity-90">per night</p>
                 </div>
               </div>

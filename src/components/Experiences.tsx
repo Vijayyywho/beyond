@@ -1,52 +1,47 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Sunrise, Waves, TreePine, Utensils, Camera, Star } from 'lucide-react';
+import { Sunrise, Waves, LampDesk, ForkKnifeCrossed , Utensils, Camera, Star,GamepadIcon, PlayIcon , } from 'lucide-react';
 
 const Experiences = () => {
   const experiences = [
     {
       icon: Sunrise,
-      title: 'Blue Hour Walks',
-      description: 'Guided coastal walks during the magical blue hour when day meets night.',
-      duration: '1.5 hours',
-      price: '₹800',
+      title: 'Lawn Area',
+      description: 'A spacious green lawn perfect for weddings, events, and open-air celebrations.',
+      feature: 'Ideal for gatherings & events',
     },
     {
-      icon: TreePine,
-      title: 'Mangrove Exploration',
-      description: 'Discover local wildlife and ancient mangrove forests with our nature guides.',
-      duration: '3 hours',
-      price: '₹1,500',
+      icon: PlayIcon,
+      title: 'Kids Play Area',
+      description: 'Safe and fun-filled space designed for children to play and enjoy.',
+      feature: 'Equipped with play rides & activities',
     },
     {
-      icon: Utensils,
-      title: 'Candlelight Dining',
-      description: 'Private beachside dinner under the stars with locally sourced cuisine.',
-      duration: '2 hours',
-      price: '₹3,200',
+      icon: LampDesk,
+      title: 'AC Conference Hall',
+      description: 'A fully air-conditioned hall designed for meetings, seminars, and events.',
+      feature: 'Seating capacity: 100+',
+    },
+    {
+      icon: GamepadIcon,
+      title: 'Game Zone',
+      description: 'Indoor entertainment space with exciting games for all age groups.',
+      feature: 'Fun for kids & adults',
+    },
+    {
+      icon: ForkKnifeCrossed,
+      title: 'Restaurant',
+      description: 'Multi-cuisine restaurant serving delicious meals with a cozy ambiance.',
+      feature: 'Open for breakfast, lunch & dinner',
     },
     {
       icon: Waves,
-      title: 'Sunset Boat Tours',
-      description: 'Peaceful boat rides along the coast as the sun paints the sky.',
-      duration: '2 hours',
-      price: '₹1,200',
+      title: '5 Mins Walk to Beach',
+      description: 'Easy access to the beach, just a short stroll from the resort.',
+      feature: 'Relax & enjoy the seaside vibes',
     },
-    {
-      icon: Camera,
-      title: 'Photography Tours',
-      description: 'Capture the coastal beauty with professional photography guidance.',
-      duration: '4 hours',
-      price: '₹2,000',
-    },
-    {
-      icon: Star,
-      title: 'Stargazing Sessions',
-      description: 'Clear night sky observation sessions away from city lights.',
-      duration: '1.5 hours',
-      price: '₹600',
-    },
+    
   ];
 
   return (
@@ -82,10 +77,8 @@ const Experiences = () => {
                 </p>
 
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-text-body">{experience.duration}</span>
-                  <span className="font-semibold text-secondary text-lg">
-                    {experience.price}
-                  </span>
+                  <span className="text-text-body">{experience.feature}</span>
+                 
                 </div>
               </CardContent>
             </Card>
